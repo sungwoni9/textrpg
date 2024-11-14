@@ -2,7 +2,7 @@ package Stage;
 
 import textrptg.GameManager;
 
-public class InitStage extends Stage {
+public class StageInit extends Stage {
 
 	private static String input = "";
 
@@ -26,7 +26,7 @@ public class InitStage extends Stage {
 		return true;
 	}
 
-	public static InitStage getInstance() {
-		return new InitStage();
+	public static StageInit getInstance() {
+		return new StageInit();
 	}
 }

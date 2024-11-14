@@ -1,12 +1,12 @@
 package textrptg;
 
-import Stage.InitStage;
-import Stage.SelectJobStage;
+import Stage.StageInit;
+import Stage.StageSelctJob;
 
 public class Main {
 
 	public static void main(String[] args) {
-		SelectJobStage init = SelectJobStage.getInstance();
+		StageSelctJob init = StageSelctJob.getInstance();
 		init.updateScreen();
 
 	

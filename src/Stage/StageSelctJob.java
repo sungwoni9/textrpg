@@ -1,10 +1,10 @@
 package Stage;
 
-public class SelectJobStage extends Stage {
+public class StageSelctJob extends Stage {
 	private final int WARRIOR = 1;
-	private final int ARCHER = 1;
-	private final int WIZZARD = 1;
-	private final int THIEF = 1;
+	private final int WIZZARD = 2;
+	private final int ARCHER = 3;
+	private final int THIEF = 4;
 
 	@Override
 	public boolean updateScreen() {
@@ -23,13 +23,20 @@ public class SelectJobStage extends Stage {
 		try {
 			String input = buffer.toString();
 			int sel = Integer.parseInt(input);
+			
+			switch (sel) {
+			case WARRIOR -> 
+			case ARCHER -> 
+			case WIZZARD -> 
+			case THIEF ->
+			}
 
 		} catch (Exception e) {
 		}
 		return false;
 	}
 
-	public static SelectJobStage getInstance() {
-		return new SelectJobStage();
+	public static StageSelctJob getInstance() {
+		return new StageSelctJob();
 	}
 }
