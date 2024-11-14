@@ -1,5 +1,5 @@
 package Stage;
 
-public class StageShop {
+public class StageShop extends Stage {
 
 }

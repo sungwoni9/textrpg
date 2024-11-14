@@ -1,5 +1,5 @@
 package Monsters;
 
-public class MonsterSnail {
+public class MonsterSnail extends Monster{
 
 }

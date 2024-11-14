@@ -1,5 +1,5 @@
 package Stage;
 
-public class StageBattle {
+public class StageBattle extends Stage {
 
 }

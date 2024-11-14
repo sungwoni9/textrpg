@@ -1,5 +1,5 @@
 package Monsters;
 
-public class MonsterWolf {
+public class MonsterWolf extends Monster{
 
 }

@@ -13,12 +13,11 @@ public class InitStage extends Stage {
 		buffer.append("[시작] 을 입력하세요\n");
 
 		System.out.println(buffer.toString());
-
+		
 		try {
-
 			input = buffer.toString();
 			if (input.equals("시작")) {
-				GameManager.nextStage = "LOBBY";
+				GameManager.nextStage = "SELECT JAB";
 				return false;
 			}
 		} catch (Exception e) {
