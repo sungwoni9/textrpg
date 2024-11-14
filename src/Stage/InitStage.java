@@ -1,13 +1,13 @@
 package Stage;
 
-import java.io.IOException;
 import textrptg.GameManager;
 
 public class InitStage extends Stage {
-	private StringBuffer buffer = new StringBuffer();
+
+	private static String input = "";
 
 	@Override
-	public boolean startScreen() {
+	public boolean updateScreen() {
 		buffer.setLength(0);
 		buffer.append("==== TEXT RPG ====\n");
 		buffer.append("[시작] 을 입력하세요\n");
@@ -16,13 +16,13 @@ public class InitStage extends Stage {
 
 		try {
 
-			String start = GameManager.reader.readLine();
-			if (start.equals("시작")) {
+			input = buffer.toString();
+			if (input.equals("시작")) {
 				GameManager.nextStage = "LOBBY";
 				return false;
 			}
-		} catch (IOException e) {
-			System.out.println("입력 오류가 발생했습니다.");
+		} catch (Exception e) {
+			System.out.println();
 		}
 		return true;
 	}
