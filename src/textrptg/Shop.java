@@ -1,5 +1,5 @@
 package textrptg;
 
-public class Enemy {
+public class Shop {
 
 }
