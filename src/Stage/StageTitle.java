@@ -2,7 +2,7 @@ package Stage;
 
 import textrptg.GameManager;
 
-public class StageInit extends Stage {
+public class StageTitle extends Stage {
 
 	private static String input = "";
 
@@ -17,7 +17,7 @@ public class StageInit extends Stage {
 		try {
 			input = buffer.toString();
 			if (input.equals("시작")) {
-				GameManager.nextStage = "SELECT JAB";
+				GameManager.nextStage = "SELECTJAB";
 				return false;
 			}
 		} catch (Exception e) {
@@ -26,7 +26,7 @@ public class StageInit extends Stage {
 		return true;
 	}
 
-	public static StageInit getInstance() {
-		return new StageInit();
+	public static StageTitle getInstance() {
+		return new StageTitle();
 	}
 }

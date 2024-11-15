@@ -1,6 +1,6 @@
 package Stage;
 
-public class StageLoby extends Stage {
+public class StageLobby extends Stage {
 	private StringBuffer buffer = new StringBuffer();
 
 	@Override
@@ -11,5 +11,6 @@ public class StageLoby extends Stage {
 		return true;
 
 	}
+
 
 }

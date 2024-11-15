@@ -1,15 +1,21 @@
 package textrptg;
 
-import Stage.StageInit;
+import Stage.StageTitle;
 import Stage.StageSelctJob;
 
 public class Main {
 
 	public static void main(String[] args) {
-		StageSelctJob init = StageSelctJob.getInstance();
-		init.updateScreen();
-
-	
+		boolean run = true;
+		GameManager.instance.init();
+		while (true) {
+			run = GameManager.instance.updateScreen();
+			if (run == false) {
+				break;
+			}
+		}
 		System.out.println("게임 종료");
 	}
+	
+	
 }
