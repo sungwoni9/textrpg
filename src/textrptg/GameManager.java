@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.Map;
 
+import Stage.Stage;
 import Stage.StageBattle;
 import Stage.StageLobby;
 import Stage.StageSelctJob;
@@ -13,12 +14,15 @@ import Unit.Player;
 
 public class GameManager {
 
-	public static String nextStage;
 	public static BufferedReader reader;
 	public static Player player;
-	public static GameManager instance;
-	Map<String, StageSetting> stageList = new HashMap<String, StageSetting>();
-	private StringBuilder buffer = new StringBuilder(); // buffer 선언
+
+	public static String nextStage = "";
+	String curStage = "";
+
+	static GameManager instance = new GameManager();
+	Map<String, Stage> stageList = new HashMap<String, Stage>();
+	private StringBuilder buffer = new StringBuilder();
 
 	private GameManager() {
 
@@ -31,18 +35,18 @@ public class GameManager {
 		return instance;
 	}
 
-	public void init() {
+	void init() {
 		stageList.put("TITLE", new StageTitle());
 		stageList.put("SELECTJOB", new StageSelctJob());
-		stageList.put("BATTLE", new StageBattle());
 		stageList.put("LOBBY", new StageLobby());
+		stageList.put("BATTLE", new StageBattle());
 		nextStage = "TITLE";
 	}
 
-	public boolean updateScreen() {
-		StageSetting currentStage = stageList.get(nextStage);
+	public boolean update() {
+		Stage currentStage = stageList.get(nextStage);
 		if (currentStage != null) {
-			return currentStage.updateScreen();
+			return currentStage.update();
 		}
 		return false;
 	}
