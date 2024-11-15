@@ -9,9 +9,7 @@ import textrptg.GameManager;
 
 public class StageTitle extends Stage {
 
-	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	private static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-
+	
 	private static String input = "";
 
 	@Override
@@ -30,7 +28,7 @@ public class StageTitle extends Stage {
 		try {
 			String input = reader.readLine();
 
-			if (input.equals("시작")) {
+			if (input != null && input.equals("시작")) {
 				GameManager.nextStage = "SELECTJAB";
 				return false;
 			}
