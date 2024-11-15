@@ -1,10 +1,9 @@
 package Stage;
 
-public class StageShop extends Stage {
+public class StageShop extends StageSetting {
 
 	@Override
-	public boolean updateScreen() {
-		// TODO Auto-generated method stub
+	public boolean update() {
 		return false;
 	}
 

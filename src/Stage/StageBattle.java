@@ -3,8 +3,13 @@ package Stage;
 public class StageBattle extends Stage {
 
 	@Override
-	public boolean updateScreen() {
+	public boolean update() {
 		return false;
+	}
+
+	@Override
+	public void init() {
+		
 	}
 
 }

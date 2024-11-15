@@ -1,10 +1,13 @@
 package Stage;
 
-public class StageSetting extends Stage{
+public  class StageSetting extends Stage {
 
-	@Override
-	public boolean updateScreen() {
+	public boolean update() {
 		return false;
+	}
+
+	public void init() {
+
 	}
 
 }

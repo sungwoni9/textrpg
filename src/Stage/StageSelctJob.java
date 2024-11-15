@@ -15,7 +15,7 @@ public class StageSelctJob extends Stage {
 	@Override
 	public boolean update() {
 		buffer.setLength(0);
-		buffer.append("\t|직업을 선택하세요|\n");
+		buffer.append("\t\t|직업을 선택하세요|\n");
 
 		buffer.append("-------------------------------------------------------------\n");
 		buffer.append("1.전사) [HP 200] [MP  50] [ATX 15] [DEF 30] [DEX 10] [LUCK  3]\n");
@@ -59,6 +59,8 @@ public class StageSelctJob extends Stage {
 				}
 				return true;
 			}
+			
+			buffer.append("플레이어의 직업을 %s로 설정합니다.", );
 
 			Unit.player = player;
 			GameManager.nextStage = "LOBBY";
