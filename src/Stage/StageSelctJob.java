@@ -1,10 +1,12 @@
 package Stage;
 
+import java.io.IOException;
+
 import Unit.Player;
 import Unit.Unit;
 import textrptg.GameManager;
 
-public class StageSelctJob extends Stage {
+public class StageSelctJob extends StageSetting {
 	private final int WARRIOR = 1;
 	private final int WIZZARD = 2;
 	private final int ARCHER = 3;
@@ -12,8 +14,7 @@ public class StageSelctJob extends Stage {
 
 	@Override
 	public boolean updateScreen() {
-		buffer.append(String.format("\t\t|직업을 선택하세요|"));
-		System.out.println(buffer.toString());
+		buffer.append("\t\t|직업을 선택하세요|");
 		buffer.setLength(0);
 
 		buffer.append("-------------------------------------------------------------");
@@ -21,11 +22,15 @@ public class StageSelctJob extends Stage {
 		buffer.append("\n2.법사) [HP 150] [MP 100] [ATX 30] [DEF  5] [DEX  5] [LUCK  3]");
 		buffer.append("\n3.궁수) [HP 150] [MP  80] [ATX 25] [DEF 10] [DEX 10] [LUCK  3]");
 		buffer.append("\n4.도적) [HP 150] [MP  60] [ATX 15] [DEF 10] [DEX 20] [LUCK 10]");
-		System.out.println(buffer.toString());
-		buffer.setLength(0);
+		try {
+			writer.write(buffer.toString());
+			writer.flush();
+		} catch (IOException e) {
+			System.out.println("출력 오류가 발생했습니다.");
+		}
 
 		try {
-			String input = buffer.toString();
+			String input = reader.readLine();
 			int sel = Integer.parseInt(input);
 
 			Player player;
@@ -35,8 +40,10 @@ public class StageSelctJob extends Stage {
 			case ARCHER -> player = new Player(150, 80, 25, 10, 10, 3);
 			case THIEF -> player = new Player(150, 60, 15, 10, 20, 10);
 			default -> {
-				buffer.append("다시 입력하세요");
 				buffer.setLength(0);
+				buffer.append("잘못된 입력입니다. 다시 시도해 주세요.\n");
+				writer.write(buffer.toString());
+				writer.flush();
 				return true;
 			}
 			}
@@ -51,4 +58,5 @@ public class StageSelctJob extends Stage {
 	public static StageSelctJob getInstance() {
 		return new StageSelctJob();
 	}
+
 }
