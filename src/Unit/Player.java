@@ -20,15 +20,9 @@ public class Player extends Unit {
 		init();
 	}
 
-	Player() {
-		this.money = 100000;
+	void init() {
 		this.guild = new Guild();
 		this.inven = new Inventory();
-		init();
-
-	}
-
-	void init() {
 		guild.setGuild();
 	}
 
@@ -46,6 +40,10 @@ public class Player extends Unit {
 
 	Inventory getInventory() {
 		return inven;
+	}
+
+	public Guild getGuild() {
+		return guild;
 	}
 
 }
