@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-import textrptg.GameManager;
+import textrpg.GameManager;
 
 public abstract class Stage {
 

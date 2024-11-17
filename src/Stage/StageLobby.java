@@ -2,7 +2,7 @@ package Stage;
 
 import java.io.IOException;
 
-import textrptg.GameManager;
+import textrpg.GameManager;
 
 public class StageLobby extends Stage {
 
@@ -10,7 +10,7 @@ public class StageLobby extends Stage {
 		
 		
 		buffer.setLength(0);
-		buffer.append("=====[LOBBY]=====");
+		buffer.append("\n=====[LOBBY]=====");
 		buffer.append("\n[1. 전투] [2. 설정] [3. 종료]");
 		System.out.println(buffer);
 

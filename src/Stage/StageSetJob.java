@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import Unit.Player;
 import Unit.Unit;
-import textrptg.GameManager;
+import textrpg.GameManager;
 
 public class StageSetJob extends Stage {
 	private final int WARRIOR = 1;
@@ -67,6 +67,7 @@ public class StageSetJob extends Stage {
 				}
 				return true;
 			}
+			buffer.setLength(0);
 			buffer.append(String.format("플레이어의 직업을 %s로 설정합니다.\n", jobName));
 			GameManager.writer.write(buffer.toString());
 			GameManager.writer.flush();
@@ -86,15 +87,6 @@ public class StageSetJob extends Stage {
 			return true;
 		}
 
-	}
-
-	private void input(String message) {
-		try {
-			GameManager.writer.write(message);
-			GameManager.writer.flush();
-		} catch (IOException e) {
-			System.out.println("출력 오류가 발생했습니다.");
-		}
 	}
 
 	@Override

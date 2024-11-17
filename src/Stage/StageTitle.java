@@ -1,6 +1,6 @@
 package Stage;
 
-import textrptg.GameManager;
+import textrpg.GameManager;
 
 public class StageTitle extends Stage {
 
