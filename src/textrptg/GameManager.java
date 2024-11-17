@@ -10,7 +10,7 @@ import java.util.Map;
 import Stage.Stage;
 import Stage.StageBattle;
 import Stage.StageLobby;
-import Stage.StageSelctJob;
+import Stage.StageSetJob;
 import Stage.StageTitle;
 import Unit.Player;
 
@@ -51,7 +51,7 @@ public class GameManager {
 
 	void init() {
 		stageList.put("TITLE", new StageTitle());
-		stageList.put("SELECTJAB", new StageSelctJob());
+		stageList.put("SETJOB", new StageSetJob());
 		stageList.put("LOBBY", new StageLobby());
 		stageList.put("BATTLE", new StageBattle());
 		currentStage = "START";

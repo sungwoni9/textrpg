@@ -15,7 +15,7 @@ public class StageTitle extends Stage {
 
 			String input = reader.readLine();
 			if (input != null && input.equals("시작")) {
-				GameManager.nextStage = "SELECTJAB";
+				GameManager.nextStage = "SETJOB";
 				return false;
 			}
 		} catch (Exception e) {
